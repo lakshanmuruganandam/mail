@@ -46,7 +46,7 @@ class Version3500Date20231115184458 extends SimpleMigrationStep {
 		 * @see \OCA\Mail\Migration\Version0161Date20190902103701::changeSchema
 		 */
 		foreach ($mailboxesTable->getIndexes() as $index) {
-			if ($index->isUnique() && $index->spansColumns(['account_id', 'name'])) {
+			if ($index->isUnique() && $index->getColumns() === ['account_id', 'name']) {
 				$mailboxesTable->dropIndex($index->getName());
 			}
 		}

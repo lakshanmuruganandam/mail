@@ -59,19 +59,13 @@ class Version1040Date20200506111214 extends SimpleMigrationStep {
 		]);
 		$table->addColumn('recall_important', Types::DECIMAL, [
 			'notnull' => true,
-			'precision' => 10,
-			'scale' => 5,
-		]);
+		])->setPrecision(10)->setScale(5);
 		$table->addColumn('precision_important', Types::DECIMAL, [
 			'notnull' => true,
-			'precision' => 10,
-			'scale' => 5,
-		]);
+		])->setPrecision(10)->setScale(5);
 		$table->addColumn('f1_score_important', Types::DECIMAL, [
 			'notnull' => true,
-			'precision' => 10,
-			'scale' => 5,
-		]);
+		])->setPrecision(10)->setScale(5);
 		$table->addColumn('duration', Types::INTEGER, [
 			'notnull' => true,
 		]);

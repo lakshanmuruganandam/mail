@@ -90,7 +90,7 @@ class Version5007Date20260108124422 extends SimpleMigrationStep {
 	 */
 	private function addMailboxKey(Table|ITable $accountsTable, Table|ITable $mailboxesTable, string $mailboxType): void {
 		$accountsTable->addForeignKeyConstraint(
-			$mailboxesTable,
+			$mailboxesTable->getName(),
 			["{$mailboxType}_mailbox_id"],
 			['id'],
 			[
